@@ -46,7 +46,7 @@ export default function Home() {
               At Caladan Industries, our mission is to revolutionize defense manufacturing through innovative, cost-effective, and scalable solutions. We aim to enhance national security by providing cutting-edge technology that is both accessible and efficient.
             </p>
             <p className="text-lg">
-              By focusing on pulsejet engines for interception, we're paving the way for a new era of defense capabilities that combine affordability with high performance.
+              By focusing on pulsejet engines for interception, we are paving the way for a new era of defense capabilities that combine affordability with high performance.
             </p>
           </SectionParagraph>    
         </Section>
@@ -56,7 +56,7 @@ export default function Home() {
           <SectionHeading>Contact</SectionHeading>
           <SectionParagraph className="mb-10">
             <p className="text-lg mb-4">
-              We'd love to hear from you! Whether you're interested in our products, looking to collaborate, or just want to learn more about Caladan Industries, don't hesitate to get in touch.
+              To learn more about our offerings, email us below.
             </p>
             <div className="text-lg">
               <p>Email</p> <a href="mailto:info@caladanindustries.com">info@caladanindustries.com</a>
