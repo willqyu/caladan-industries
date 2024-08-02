@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Section, { InfoTag, SectionHeading, SectionParagraph } from '../components/Section'
-import { serifLogo } from '@/lib/font'
 
 import Image from 'next/image'
 
