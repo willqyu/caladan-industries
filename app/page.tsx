@@ -28,7 +28,7 @@ export default function Home() {
 
         <Section className='pt-0 pb-10'>
           <Image
-              src="/engine.png"
+              src="./engine.png"
               alt="Caladan Industries Hero"
               width={1000}
               height={400}
