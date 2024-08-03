@@ -19,7 +19,7 @@ const Navbar = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-primary text-white p-4"
+      className="bg-primary text-white p-4 fixed w-full z-[100]"
     >
       <div className={"container mx-auto my-2 flex justify-between items-center " + serifLogo.className}>
         <div className="text-3xl mx-4">
