@@ -57,7 +57,7 @@ export default function Home() {
               To learn more about our offerings, email us below.
             </p>
             <div className="text-lg">
-              <p>Email</p> <a href="mailto:info@caladanindustries.com">info@caladanindustries.com</a>
+              <p>Email</p> <a href="mailto:contact@caladanindustries.com">info@caladanindustries.com</a>
             </div>
           </SectionParagraph>    
         </Section>
