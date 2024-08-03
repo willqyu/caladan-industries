@@ -8,7 +8,7 @@ const BarItem = (
 ) => {
   return (
     <motion.li whileHover={{ scale: 1.05 }}>
-      <Link href={"#" + title.toLowerCase()}>{title}</Link>
+      <Link className='text-xl' href={"#" + title.toLowerCase()}>{title}</Link>
     </motion.li>
   )
 }
@@ -21,13 +21,11 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="bg-primary text-white p-4"
     >
-      <div className={"container mx-auto flex justify-between items-center " + serifLogo.className}>
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="text-3xl mx-4"
-        >
+      <div className={"container mx-auto my-2 flex justify-between items-center " + serifLogo.className}>
+        <div className="text-3xl mx-4">
           Caladan Industries
-        </motion.div>
+        </div>
+        
         <ul className="flex space-x-8 mr-4">
           <BarItem title="About"></BarItem>
           <BarItem title="Mission"></BarItem>

@@ -15,21 +15,19 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <Section>
+          <div id="about"></div>  
           <InfoTag id={1} tag="OVERVIEW"></InfoTag>
           <SectionHeading>About Us</SectionHeading>
           <SectionParagraph className="mb-10">
-            <p className="text-lg mb-4">
-              Caladan Industries is a cutting-edge defense manufacturing startup founded by a trio of innovative engineers from Cambridge and Imperial. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
-            </p>
-            <p className="text-lg">
-              Our initial focus is on pulsejet engines for interception, leveraging our expertise in aerospace engineering and advanced materials to create efficient and cost-effective solutions.
-            </p>
-          </SectionParagraph>    
+            Caladan Industries is a cutting-edge defense manufacturing startup founded by a trio of innovative engineers from Cambridge and Imperial. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
+          </SectionParagraph>
+          <SectionParagraph className="mb-10">
+            Our initial focus is on pulsejet engines for interception, leveraging our expertise in aerospace engineering and advanced materials to create efficient and cost-effective solutions.
+          </SectionParagraph>
         </Section>
 
-        <Section>
+        <Section className='pt-0 pb-10'>
           <Image
-          
               src="/engine.png"
               alt="Caladan Industries Hero"
               width={1000}
@@ -39,19 +37,19 @@ export default function Home() {
         </Section>
 
         <Section className="bg-dark text-white">
+          <div id="mission"></div>  
           <InfoTag id={2} tag="MISSION STATEMENT"></InfoTag>
           <SectionHeading>Our Mission</SectionHeading>
           <SectionParagraph className="mb-10">
-            <p className="text-lg mb-4">
               At Caladan Industries, our mission is to revolutionize defense manufacturing through innovative, cost-effective, and scalable solutions. We aim to enhance national security by providing cutting-edge technology that is both accessible and efficient.
-            </p>
-            <p className="text-lg">
+          </SectionParagraph>
+          <SectionParagraph className="mb-10">
               By focusing on pulsejet engines for interception, we are paving the way for a new era of defense capabilities that combine affordability with high performance.
-            </p>
           </SectionParagraph>    
         </Section>
         
         <Section>
+          <div id="contact"></div>  
           <InfoTag id={3} tag="CONTACT US"></InfoTag>
           <SectionHeading>Contact</SectionHeading>
           <SectionParagraph className="mb-10">
