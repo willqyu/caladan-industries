@@ -1,39 +1,131 @@
-'use client'
-import { serifLogo } from '@/lib/font'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+import Link from "next/link";
+import { BezierDefinition, motion, useAnimate } from "framer-motion"
+import { useEffect, useState } from "react";
+import { serifLogo } from "../lib/font"
 
-const BarItem = (
-  {title} : {title: string}
-) => {
-  return (
-    <motion.li whileHover={{ scale: 1.05 }}>
-      <Link className='text-xl' href={"#" + title.toLowerCase()}>{title}</Link>
-    </motion.li>
-  )
-}
+const easing1: BezierDefinition = [.11,.37,0,1]
 
-const Navbar = () => {
-  return (
-    <motion.nav
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-primary text-white p-4 fixed w-full z-[100]"
-    >
-      <div className={"container mx-auto my-2 flex justify-between items-center " + serifLogo.className}>
-        <div className="text-3xl mx-4">
-          Caladan Industries
-        </div>
+function NavbarItem({url, text, delay} : { url : string, text: string, delay: number}) {
+    
+    const item = {
+        initial: { opacity: 0, translateY: -70 },
+        animate: { opacity: 1, translateY: 0 }
+    }
+
+    return (
+        <motion.div
+            initial= "initial"
+            animate= "animate"
+            variants={item}
+            transition= {{ duration: 0.7, ease: [.11,.37,0,1], delay: delay}}
+            className="p-5 group"
+        >
+            <Link 
+            href={url}
+            className="
+                text-white text-center
+                "
+            >
+                {text}
+            </Link>
+            <div className="h-[5px] bg-primary w-0 group-hover:w-[100%] transition"></div>
+        </motion.div>
         
-        <ul className="flex space-x-8 mr-4">
-          <BarItem title="About"></BarItem>
-          <BarItem title="Mission"></BarItem>
-          <BarItem title="Contact"></BarItem>
-        </ul>
-      </div>
-    </motion.nav>
-  )
+    )
 }
 
-export default Navbar
+export default function Navbar({delay} : {delay : number}) {
+
+    const [isVisible, setIsVisible] = useState(true);
+    const [isGreen, setIsGreen] = useState(false);
+    const [scope, animate] = useAnimate();
+    const [lastScroll, setLastScroll] = useState(0);
+
+    const hide = async () => {
+        await animate(scope.current, 
+            { "y" : "-110%" },
+            { ease: easing1, duration: 0.5 }
+        )
+    }
+
+    const reveal = async () => {
+        await animate(scope.current,
+            { "y" : 0  },
+            { ease: easing1, duration: 0.5 }
+        )
+    }
+
+    const handleScroll = () => {
+        const scroll = window.scrollY;
+         
+        const shouldBeVisible = scroll < lastScroll;
+        setLastScroll(scroll);
+
+        const shouldBeGreen = scroll >= screen.height * 0.1;
+        setIsGreen(shouldBeGreen);
+
+        // console.log(scroll, shouldBeGreen);
+
+        if (shouldBeVisible === isVisible) return;
+        setIsVisible(shouldBeVisible);
+        if (shouldBeVisible) {
+            reveal()
+        } else {
+            hide()
+        } 
+      };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isVisible, handleScroll])
+    
+    useEffect(() => {
+        const scroll = window.scrollY;
+        const shouldBeGreen = scroll >= screen.height * 0.1;
+        setIsGreen(shouldBeGreen);
+    }, [])
+
+    const stagger = 0.3
+
+    // useEffect(() => {
+    //     handleScroll()
+    // }, []);
+
+    return (
+        <motion.div 
+            className={`
+                fixed min-w-full 
+                flex justify-center 
+                z-[100]
+                transition-colors duration-500 ${isGreen ? "bg-primary" : ""}
+            `}
+            ref={scope}
+        >
+            <div className="flex min-h-[5em] w-[90%] items-center justify-between
+            ">
+                <motion.h1 
+                    className={`
+                    text-4xl tracking-wider text-white text-center
+                    ` + serifLogo.className}
+                    initial={{ opacity: 0, translateY: -70 }}
+                    animate={{ opacity: 1, translateY: 0 }}
+                    transition = {{
+                        delay: delay
+                    }}
+                >
+                Caladan Industries
+                </motion.h1>
+                <motion.div className="flex "
+                    transition = {{
+                        delay: delay
+                    }}
+                >
+                    <NavbarItem url="#mission" text="Mission" delay={delay}></NavbarItem>
+                    <NavbarItem url="#about" text="About" delay={delay}></NavbarItem>
+                    <NavbarItem url="#contact" text="Contact" delay={delay+stagger}></NavbarItem>
+                </motion.div>
+            </div>
+        </motion.div>
+    )
+}
