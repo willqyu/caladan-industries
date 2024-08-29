@@ -2,7 +2,7 @@
 import { frame, motion } from "framer-motion"
 import { useState } from "react";
 
-import { serifLogo } from "../lib/font"
+import { fontPrimary } from "../lib/styles"
 
 export default function Intro_Anim({delay} : {delay : number}) {
     const [isVisible, setIsVisible] = useState(true);
@@ -16,7 +16,7 @@ export default function Intro_Anim({delay} : {delay : number}) {
             className="
                 fixed top-0 left-0 z-[100] 
                 min-h-screen min-w-full
-                bg-gradient-to-bl from-gray-700 via-gray-900 to-black
+                bg-dark
             "
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
@@ -32,7 +32,7 @@ export default function Intro_Anim({delay} : {delay : number}) {
                     <h1 
                         className={`
                         z-100 text-8xl text-white text-center border-white
-                        ` + serifLogo.className}
+                        ` + fontPrimary.className}
                     >
                     CALADAN
                     </h1>

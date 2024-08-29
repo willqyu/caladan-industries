@@ -1,5 +1,9 @@
 import type { Config } from "tailwindcss";
 
+export const colorPrimary = "#00FFC2"
+export const colorSecondary = "#242a76"
+export const colorDark = "#1E1E1E"
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,9 +18,9 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: '#ea5736',
-        secondary: "#242a76",
-        dark: "#343434"
+        primary: colorPrimary,
+        secondary: colorSecondary,
+        dark: colorDark
       }
     },
   },

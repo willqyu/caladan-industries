@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from 'next/image'
 import { BezierDefinition, motion, useAnimate } from "framer-motion"
 import { useEffect, useState } from "react";
-import { serifLogo } from "../lib/font"
+import { fontPrimary, fontPrimaryBold } from "../lib/styles"
 
 const easing1: BezierDefinition = [.11,.37,0,1]
 
@@ -22,13 +23,11 @@ function NavbarItem({url, text, delay} : { url : string, text: string, delay: nu
         >
             <Link 
             href={url}
-            className="
-                text-white text-center
-                "
+            className={"text-center "+ fontPrimaryBold.className}
             >
                 {text}
             </Link>
-            <div className="h-[5px] bg-primary w-0 group-hover:w-[100%] transition"></div>
+            <div className="h-[5px] bg-primary w-0 group-hover:w-[100%] transition-w duration-500"></div>
         </motion.div>
         
     )
@@ -37,7 +36,7 @@ function NavbarItem({url, text, delay} : { url : string, text: string, delay: nu
 export default function Navbar({delay} : {delay : number}) {
 
     const [isVisible, setIsVisible] = useState(true);
-    const [isGreen, setIsGreen] = useState(false);
+    const [isChange, setIsGreen] = useState(false);
     const [scope, animate] = useAnimate();
     const [lastScroll, setLastScroll] = useState(0);
 
@@ -98,31 +97,37 @@ export default function Navbar({delay} : {delay : number}) {
                 fixed min-w-full 
                 flex justify-center 
                 z-[100]
-                transition-colors duration-500 ${isGreen ? "bg-primary" : ""}
+                transition-colors duration-500 ${isChange ? "bg-white" : ""}
             `}
             ref={scope}
         >
-            <div className="flex min-h-[5em] w-[90%] items-center justify-between
+            <div className="flex min-h-[8em] w-[90%] items-center justify-between
             ">
                 <motion.h1 
                     className={`
                     text-4xl tracking-wider text-white text-center
-                    ` + serifLogo.className}
+                    ` + fontPrimary.className}
                     initial={{ opacity: 0, translateY: -70 }}
                     animate={{ opacity: 1, translateY: 0 }}
                     transition = {{
                         delay: delay
                     }}
                 >
-                Caladan Industries
+                    <Image
+                        src={isChange ? "./Logo.png" : "./Logo Light.png"}
+                        alt="Caladan Industries Logo"
+                        width={200}
+                        height={50}
+                        priority
+                    />
                 </motion.h1>
-                <motion.div className="flex "
+                <motion.div className={"flex " + (isChange ? " text-black" : " text-white")}
                     transition = {{
                         delay: delay
                     }}
                 >
                     <NavbarItem url="#mission" text="Mission" delay={delay}></NavbarItem>
-                    <NavbarItem url="#about" text="About" delay={delay}></NavbarItem>
+                    <NavbarItem url="#product" text="Product" delay={delay}></NavbarItem>
                     <NavbarItem url="#contact" text="Contact" delay={delay+stagger}></NavbarItem>
                 </motion.div>
             </div>

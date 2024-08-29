@@ -1,5 +1,5 @@
 import { useRevealOnView } from "../lib/animConstants";
-import { serifBody, sanSerif, serifLogo } from "../lib/font";
+import {  fontMono, fontMonoBold, fontPrimary, fontPrimaryBold, fontPrimaryThin, sanSerif  } from "../lib/styles";
 import { motion } from "framer-motion";
 
 
@@ -7,17 +7,10 @@ import { motion } from "framer-motion";
 export function InfoTag({id, tag, className=""} : {id: number, tag: string, className?: string}) {
     return (
         <motion.div className={`
-            flex items-center ` + className}
+            flex items-center text-primary  ` + className}
         >
-            <div className="
-                flex justify-center items-center
-                border-r-2 border-b-2 border-primary rounded-full w-16 h-16 my-6
-                text-center 
-            ">
-                <h1 className={"align-middle leading-none text-1xl " + sanSerif.className}>{String(id).padStart(2, '0')}</h1>
-            </div>
             <h1
-                className={"mx-6 " + sanSerif.className}
+                className={"text-2xl " + fontMonoBold.className}
             >{tag}</h1>
         </motion.div>
     )
@@ -34,7 +27,7 @@ export function SectionHeading({
 
     return (
         <motion.h1
-            className={"text-6xl mt-4 mb-10 "+ className}
+            className={fontMonoBold.className + " text-6xl mt-4 mb-10 "+ className}
         >{children}</motion.h1>
     )
   }
@@ -47,7 +40,7 @@ export function SectionParagraph({
     className?: string
   }>) {
     return (
-        <p className={className + " text-left text-1xl " + sanSerif.className}>
+        <p className={className + " text-left text-2xl " + fontMono.className}>
             {children}
         </p>
     )

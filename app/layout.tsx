@@ -3,8 +3,7 @@ import { Playfair_Display } from "next/font/google";
 
 
 import "./globals.css";
-
-const playfair = Playfair_Display({  subsets: ["latin"], weight: "400"});
+import { fontMono, fontPrimary, fontPrimaryBold } from "@/lib/styles";
 
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth [&::-webkit-scrollbar]:hidden">
-      <body className={playfair.className}>{children}</body>
+      <body className={fontMono.className}>{children}</body>
     </html>
   );
 }
