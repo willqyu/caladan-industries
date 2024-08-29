@@ -123,8 +123,8 @@ export default function Home() {
         </SectionParagraph>
         <SectionParagraph className={"mb-20 " + fontMonoBold.className}>
             To learn more, email us at
-          <a href="mailto:contact@caladanindustries.com">
-            <span className='text-primary'> contact@caladanindustries.com</span>
+          <a href="mailto:contact@caladan.industries">
+            <span className='text-primary'> contact@caladan.industries</span>
           </a>
         </SectionParagraph>    
       </Section>

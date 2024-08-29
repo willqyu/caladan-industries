@@ -1,5 +1,5 @@
 import { useRevealOnView } from "../lib/animConstants";
-import {  fontMono, fontMonoBold, fontPrimary, fontPrimaryBold, fontPrimaryThin, sanSerif  } from "../lib/styles";
+import {  fontMono, fontMonoBold } from "../lib/styles";
 import { motion } from "framer-motion";
 
 
