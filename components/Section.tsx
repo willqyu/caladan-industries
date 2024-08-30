@@ -27,7 +27,7 @@ export function SectionHeading({
 
     return (
         <motion.h1
-            className={fontMonoBold.className + " text-6xl mt-4 mb-10 "+ className}
+            className={fontMonoBold.className + " text-4xl md:text-6xl mt-4 mb-10 "+ className}
         >{children}</motion.h1>
     )
   }
@@ -58,7 +58,8 @@ export default function Section({
     return (
         <div
             className={`
-                px-40 min-w-full py-20
+                min-w-full
+                md:px-40 px-10 py-20
                 box-border z-10 
                 flex flex-col justify-center ` + className}
         >

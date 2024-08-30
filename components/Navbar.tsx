@@ -101,11 +101,11 @@ export default function Navbar({delay} : {delay : number}) {
             `}
             ref={scope}
         >
-            <div className="flex min-h-[8em] w-[90%] items-center justify-between
+            <div className="flex min-h-[8em] w-full items-center justify-between
             ">
                 <motion.h1 
                     className={`
-                    text-4xl tracking-wider text-white text-center
+                    text-4xl tracking-wider text-white text-center ml-10
                     ` + fontPrimary.className}
                     initial={{ opacity: 0, translateY: -70 }}
                     animate={{ opacity: 1, translateY: 0 }}
@@ -121,7 +121,7 @@ export default function Navbar({delay} : {delay : number}) {
                         priority
                     />
                 </motion.h1>
-                <motion.div className={"flex " + (isChange ? " text-black" : " text-white")}
+                <motion.div className={"hidden md:flex " + (isChange ? " text-black" : " text-white")}
                     transition = {{
                         delay: delay
                     }}

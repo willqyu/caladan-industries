@@ -18,22 +18,33 @@ export default function Home() {
         <Image
             src="./Hotfire.png"
             alt="Caladan Industries Hero"
-            fill={true}
+            fill
+            objectFit='cover'
             priority
-            className='brightness-50'
+            className='hidden md:block brightness-50'
+        />
+        <Image
+            src="./Hotfire Mobile.png"
+            alt="Caladan Industries Hero"
+            fill
+            objectFit='cover'
+            objectPosition='left'
+            priority
+            className='block md:hidden brightness-50'
         />
       </div>
       <div className='relative min-h-screen'>
         <motion.h2 
-          className={'absolute text-7xl text-white h-[2em] pl-4 left-14 bottom-24 tracking-[.15em] ' + fontMono.className}
+          className={'absolute text-4xl md:text-7xl text-white h-[2em] left-10 bottom-32 md:left-14 md:bottom-24 tracking-[.15em] ' + fontMono.className}
           initial = {{ opacity: 0, translateY: -70 }}
           animate = {{ opacity: 1, translateY: 0 }}
           transition= {{ duration: 0.7 }}
           >
-          DEMOCRATISE <br></br><span className={fontMonoBold.className + " text-9xl"}>{"HARDWARE"}</span>
+          DEMOCRATISE <br></br><span className={fontMonoBold.className + " text-6xl md:text-9xl"}>{"HARDWARE"}</span>
         </motion.h2>
       </div>
       <motion.div 
+        className='hidden md:relative'
         initial={{ translateY: -70 }}
         animate={{ translateY: -90 }}
         transition={{
@@ -58,9 +69,16 @@ export default function Home() {
           We support our democracies by developing innovative hardware that will scale to meet radically changing frontlines. 
           Superior manufacturing and supply chain capabilities are key to winning the next generation of battles.
         </SectionParagraph>
-        <div className='flex justify-center my-32'>
+        <div className='hidden md:flex justify-center my-32'>
           <CircleGrid 
             rows={1} cols={7} spacingX={100} spacingY={100} 
+            circleRadius={25}
+            colorOn={colorPrimary} colorOff={"#FFFFFF"}
+          ></CircleGrid>
+        </div>
+        <div className='flex md:hidden justify-center my-32'>
+          <CircleGrid 
+            rows={1} cols={5} spacingX={100} spacingY={100} 
             circleRadius={25}
             colorOn={colorPrimary} colorOff={"#FFFFFF"}
           ></CircleGrid>
@@ -71,17 +89,19 @@ export default function Home() {
       <Section >
         <InfoTag id={2} tag="OUR PRODUCT"></InfoTag>
         <SectionHeading>D1 Interceptor</SectionHeading>
-        <div className='flex w-full justify-center mt-32'>
-        <ImageTransition 
-          firstImageUrl="./Drone/Drone No Skeleton.png"
-          secondImageUrl="./Drone/Drone Skeleton.png"
-          width={1000}
-          height={500}
-          alt1="Drone No Skeleton"
-          alt2="Drone Skeleton"
+        <div className='justify-center mt-10 md:mt-32'>
+          <ImageTransition 
+            firstImageUrl="./Drone/Drone No Skeleton.png"
+            secondImageUrl="./Drone/Drone Skeleton.png"
+            width={1000}
+            height={500}
+            alt1="Drone No Skeleton"
+            alt2="Drone Skeleton"
         />
       </div>
-        <div className='grid grid-cols-2 grid-rows-2 gap-4'>
+        <div className='
+          md:grid md:grid-cols-2 md:grid-rows-2 md:gap-4
+        '>
           <div className=''>
             <Image
               src="./Drone/Drone Side.png"
@@ -92,11 +112,11 @@ export default function Home() {
             />
           </div>
           <div className="row-span-2">
-            <h1 className='text-4xl my-24 '>Mass-manufacturable, jet-powered drones with no moving parts</h1>
-            <li className='list-none text-4xl space-y-10 mb-24'>
-              <ul>Range: <span className={fontMonoBold.className + " text-5xl"}>70 km</span></ul>
-              <ul>Payload: <span className={fontMonoBold.className + " text-5xl"}>4 kg</span></ul>
-              <ul>Top Speed: <span className={fontMonoBold.className + " text-5xl"}>300 km/h</span></ul>
+            <h1 className='text-2xl md:text-4xl md:my-24 '>Mass-manufacturable, jet-powered drones with no moving parts</h1>
+            <li className='list-none text-3xl md:text-4xl space-y-10 my-16 md:mb-24'>
+              <ul>Range: <span className={fontMonoBold.className + " text-3xl md:text-5xl"}>70km</span></ul>
+              <ul>Payload: <span className={fontMonoBold.className + " text-3xl md:text-5xl"}>4kg</span></ul>
+              <ul>Top Speed: <span className={fontMonoBold.className + " text-3xl md:text-5xl"}>300km/h</span></ul>
             </li>
           </div>
           
@@ -119,12 +139,12 @@ export default function Home() {
         <InfoTag id={2} tag="OUR TEAM"></InfoTag>
         <SectionHeading>About Us</SectionHeading>
         <SectionParagraph className="mb-20">
-          Caladan Industries is a cutting-edge defense manufacturing startup founded by a trio of innovative engineers from the University of Cambridge and Imperial College London. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
+          We're a trio of innovative engineers from the <b>University of Cambridge</b> and <b>Imperial College London</b>. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
         </SectionParagraph>
         <SectionParagraph className={"mb-20 " + fontMonoBold.className}>
             To learn more, email us at
           <a href="mailto:contact@caladan.industries">
-            <span className='text-primary'> contact@caladan.industries</span>
+            <span className='text-primary underline text-xl md:text-2xl'> contact@caladan.industries</span>
           </a>
         </SectionParagraph>    
       </Section>

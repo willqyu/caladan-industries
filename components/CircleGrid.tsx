@@ -23,8 +23,10 @@ const CircleGrid: React.FC<CircleGridProps> = ({ rows, cols, circleRadius, spaci
 
   useEffect(() => {
     const generateRandomNumber = () => {
-      const newNumber = Math.floor(Math.random() * (rows*cols));
-      console.log(newNumber)
+      let newNumber = Math.floor(Math.random() * (rows*cols));
+      while (newNumber == randomNumber) {
+        newNumber = Math.floor(Math.random() * (rows*cols));
+      }
       setRandomNumber(newNumber);
     };
 
@@ -108,7 +110,10 @@ const CircleGrid: React.FC<CircleGridProps> = ({ rows, cols, circleRadius, spaci
   }
 
   return (
-    <svg width={width} height={height}>
+    <svg
+      className='flex-no-shrink fill-current'
+      viewBox={'0 0 '+width + " " + height}
+    >
       {lines}
       {circles}
     </svg>

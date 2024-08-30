@@ -22,16 +22,17 @@ const ImageTransition: React.FC<ImageTransitionProps> = ({
 
   return (
     <div 
-      className="relative cursor-pointer"
-      style={{ width: `${width}px`, height: `${height}px` }}
+      className="relative cursor-pointer w-full h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <Image
         src={firstImageUrl}
         alt={alt1}
-        layout="fill"
-        objectFit="cover"
+        height={0}
+        width={0}
+        objectFit="contain"
+        style={{ width: '100%', height: 'auto' }}
         className={`transition-opacity duration-300 ${
           isHovered ? 'opacity-0' : 'opacity-100'
         }`}
@@ -40,7 +41,7 @@ const ImageTransition: React.FC<ImageTransitionProps> = ({
         src={secondImageUrl}
         alt={alt2}
         layout="fill"
-        objectFit="cover"
+        objectFit="contain"
         className={`transition-opacity duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}
