@@ -139,7 +139,7 @@ export default function Home() {
         <InfoTag id={2} tag="OUR TEAM"></InfoTag>
         <SectionHeading>About Us</SectionHeading>
         <SectionParagraph className="mb-20">
-          We're a trio of innovative engineers from the <b>University of Cambridge</b> and <b>Imperial College London</b>. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
+          We are a trio of innovative engineers from the <b>University of Cambridge</b> and <b>Imperial College London</b>. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
         </SectionParagraph>
         <SectionParagraph className={"mb-20 " + fontMonoBold.className}>
             To learn more, email us at
