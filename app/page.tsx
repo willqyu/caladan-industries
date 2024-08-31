@@ -142,9 +142,9 @@ export default function Home() {
           We are a trio of innovative engineers from the <b>University of Cambridge</b> and <b>Imperial College London</b>. We specialize in developing cost-efficient, scalable hardware solutions for the defense sector.
         </SectionParagraph>
         <SectionParagraph className={"mb-20 " + fontMonoBold.className}>
-            To learn more, email us at
+            To learn more, email us at&nbsp;
           <a href="mailto:contact@caladan.industries">
-            <span className='text-primary underline text-xl md:text-2xl'> contact@caladan.industries</span>
+            <span className='text-primary underline text-xl md:text-2xl'>contact@caladan.industries</span>
           </a>
         </SectionParagraph>    
       </Section>
