@@ -35,12 +35,12 @@ export default function Home() {
       </div>
       <div className='relative min-h-screen'>
         <motion.h2 
-          className={'absolute text-4xl md:text-7xl text-white h-[2em] left-10 bottom-32 md:left-14 md:bottom-24 tracking-[.15em] ' + fontMono.className}
+          className={'absolute text-3xl md:text-7xl text-white h-[2em] left-10 bottom-32 md:left-14 md:bottom-24 tracking-[.15em] ' + fontMono.className}
           initial = {{ opacity: 0, translateY: -70 }}
           animate = {{ opacity: 1, translateY: 0 }}
           transition= {{ duration: 0.7 }}
           >
-          DEMOCRATISE <br></br><span className={fontMonoBold.className + " text-6xl md:text-9xl"}>{"HARDWARE"}</span>
+          DEMOCRATISE <br></br><span className={fontMonoBold.className + " text-4xl md:text-9xl"}>{"HARDWARE"}</span>
         </motion.h2>
       </div>
       <motion.div 
@@ -112,11 +112,11 @@ export default function Home() {
             />
           </div>
           <div className="row-span-2">
-            <h1 className='text-2xl md:text-4xl md:my-24 '>Mass-manufacturable, jet-powered drones with no moving parts</h1>
-            <li className='list-none text-3xl md:text-4xl space-y-10 my-16 md:mb-24'>
-              <ul>Range: <span className={fontMonoBold.className + " text-3xl md:text-5xl"}>70km</span></ul>
-              <ul>Payload: <span className={fontMonoBold.className + " text-3xl md:text-5xl"}>4kg</span></ul>
-              <ul>Top Speed: <span className={fontMonoBold.className + " text-3xl md:text-5xl"}>300km/h</span></ul>
+            <h1 className='text-xl md:text-2xl md:my-24 '>Mass-manufacturable, jet-powered drones with no moving parts</h1>
+            <li className='list-none text-2xl md:text-2xl space-y-10 my-16 md:mb-24'>
+              <ul>Range: <span className={fontMonoBold.className + " text-2xl md:text-3xl"}>70km</span></ul>
+              <ul>Payload: <span className={fontMonoBold.className + " text-2xl md:text-3xl"}>4kg</span></ul>
+              <ul>Top Speed: <span className={fontMonoBold.className + " text-2xl md:text-3xl"}>300km/h</span></ul>
             </li>
           </div>
           
@@ -144,11 +144,10 @@ export default function Home() {
         <SectionParagraph className={"mb-20 " + fontMonoBold.className}>
             To learn more, email us at&nbsp;
           <a href="mailto:contact@caladan.industries">
-            <span className='text-primary underline text-xl md:text-2xl'>contact@caladan.industries</span>
+            <span className='text-primary underline text-m md:text-2xl'>contact@caladan.industries</span>
           </a>
         </SectionParagraph>    
       </Section>
-      
     </main>
   )
 }

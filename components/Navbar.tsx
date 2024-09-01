@@ -101,11 +101,14 @@ export default function Navbar({delay} : {delay : number}) {
             `}
             ref={scope}
         >
-            <div className="flex min-h-[8em] w-full items-center justify-between
+            <div className="
+                flex items-center justify-between
+                min-h-[8em] w-full
+                px-10
             ">
                 <motion.h1 
                     className={`
-                    text-4xl tracking-wider text-white text-center ml-10
+                    text-4xl tracking-wider text-white text-center 
                     ` + fontPrimary.className}
                     initial={{ opacity: 0, translateY: -70 }}
                     animate={{ opacity: 1, translateY: 0 }}

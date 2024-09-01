@@ -40,7 +40,7 @@ export function SectionParagraph({
     className?: string
   }>) {
     return (
-        <p className={className + " text-left text-2xl " + fontMono.className}>
+        <p className={className + " text-left text-xl " + fontMono.className}>
             {children}
         </p>
     )
