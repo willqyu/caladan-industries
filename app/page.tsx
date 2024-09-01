@@ -135,7 +135,7 @@ export default function Home() {
       
       
       <Section className='bg-dark text-white'>
-        <div id="about"></div>  
+        <div id="contact"></div>  
         <InfoTag id={2} tag="OUR TEAM"></InfoTag>
         <SectionHeading>About Us</SectionHeading>
         <SectionParagraph className="mb-20">
